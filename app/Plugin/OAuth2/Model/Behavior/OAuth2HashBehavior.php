@@ -47,17 +47,17 @@ class OAuth2HashBehavior extends ModelBehavior {
 	 * @param	array	$settings 
 	 * @return	void
 	 */
-	public function setup(Model $model, $config = array()) {
+	public function setup(Model $Model, $config = array()) {
         
-		if (!isset($this->_settings[$model->alias])) {
+		if (!isset($this->_settings[$Model->alias])) {
 			
-			$this->_settings[$model->alias] = $this->__default_settings;
+			$this->_settings[$Model->alias] = $this->__default_settings;
 			
 		}
 		
 		if (!is_array($config)) $config = array();
 
-		$this->_settings[$model->alias] = array_merge($this->_settings[$model->alias], $config);
+		$this->_settings[$Model->alias] = array_merge($this->_settings[$Model->alias], $config);
 		
 	}
 	
