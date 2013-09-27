@@ -43,7 +43,7 @@ class OAuth2PublicAuthenticate extends BaseAuthenticate {
 	 * @param	CakeRequest		$request	The request that contains login information.
 	 * @return	mixed			False on login failure. An array of User data on success.
 	 */
-	public function getUser($request) {
+	public function getUser(CakeRequest $request) {
 		
 		return array(
 			'id' => 'public',

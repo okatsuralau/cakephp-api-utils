@@ -50,7 +50,7 @@ class OAuth2AuthorizationBehavior extends ModelBehavior {
 	 * @param	array		$settings 
 	 * @return	void
 	 */
-	public function setup(&$Model, $settings = array()) {
+	public function setup(Model $Model, $settings = array()) {
 		
 		if (!isset($this->_settings[$Model->alias])) {
 			
@@ -76,7 +76,7 @@ class OAuth2AuthorizationBehavior extends ModelBehavior {
 	 * @param	boolean	$created
 	 * @return	boolean
 	 */
-	public function afterSave(&$Model, $created = false) {
+	public function afterSave(Model $Model, $created = false) {
 		
 		if (
 			empty($Model->data[$Model->alias][$this->_settings[$Model->alias]['fields']['client_id']]) ||

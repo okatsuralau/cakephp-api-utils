@@ -47,17 +47,17 @@ class OAuth2HashBehavior extends ModelBehavior {
 	 * @param	array	$settings 
 	 * @return	void
 	 */
-	public function setup(&$Model, $settings = array()) {
-		
-		if (!isset($this->_settings[$Model->alias])) {
+	public function setup(Model $model, $config = array()) {
+        
+		if (!isset($this->_settings[$model->alias])) {
 			
-			$this->_settings[$Model->alias] = $this->__default_settings;
+			$this->_settings[$model->alias] = $this->__default_settings;
 			
 		}
 		
-		if (!is_array($settings)) $settings = array();
+		if (!is_array($config)) $config = array();
 
-		$this->_settings[$Model->alias] = array_merge($this->_settings[$Model->alias], $settings);
+		$this->_settings[$model->alias] = array_merge($this->_settings[$model->alias], $config);
 		
 	}
 	
@@ -112,7 +112,7 @@ class OAuth2HashBehavior extends ModelBehavior {
 	 * @param	array	$options
 	 * @return	boolean 
 	 */
-	public function beforeSave(&$Model, $options = array()) {
+	public function beforeSave(Model $Model, $options = array()) {
 		
 		if (!empty($this->_settings[$Model->alias]['fields'])) {
 			foreach ($this->_settings[$Model->alias]['fields'] as $field) {
@@ -137,7 +137,7 @@ class OAuth2HashBehavior extends ModelBehavior {
 	 * @param	array	$queryData
 	 * @param	array	$queryData
 	 */
-	public function beforeFind(&$Model, $queryData = array()) {
+	public function beforeFind(Model $Model, $queryData = array()) {
 		
 		if (!empty($this->_settings[$Model->alias]['fields'])) {
 			foreach ($this->_settings[$Model->alias]['fields'] as $field) {
