@@ -1,0 +1,30 @@
+{
+    "name" : "okatsuralau/cakephp-api-utils",
+    "description" : "A REST API framework for CakePHP",
+    "type" : "cakephp-plugin",
+    "keywords" : [
+        "cakephp",
+        "rest",
+        "api"
+    ],
+    "license" : "MIT",
+    "version" : "1.0.0",
+    "minimum-stability" : "dev",
+    "authors" : [
+        {
+            "name" : "Anthony Putignano",
+            "homepage" : "https://github.com/anthonyp",
+            "role" : "Author"
+        }
+    ],
+    "require" : {
+        "php" : ">=5.3.0",
+        "composer/installers" : "*"
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "master"
+        },
+        "installer-name" : "Api"
+    }
+}
